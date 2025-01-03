@@ -23,7 +23,7 @@ public class PackageEntity {
     public void addClass(ClassEntity classEntity) {
         classes.add(classEntity);
     }
-    public void addRelation(UMLRelation relation) { // New: Add a relation
+    public void addRelation(UMLRelation relation) { 
         relations.add(relation);
     }
     
@@ -43,9 +43,7 @@ public class PackageEntity {
     public String getName() {
         return name;
     }
-
-
-
+    
     public List<ClassEntity> getClasses() {
         return classes;
     }
