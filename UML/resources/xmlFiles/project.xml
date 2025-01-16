@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<Project>
+    <Package name="org.mql.java.udg.examples">
+        <Class name="A" type="class">
+            <Field>a : int</Field>
+            <Field>b : int</Field>
+            <Method>run() : void</Method>
+        </Class>
+        <Class name="B" type="class"/>
+        <Class name="Examples" type="class">
+            <Field>project : Project</Field>
+            <Method>ex02() : void</Method>
+            <Method>ex03() : void</Method>
+            <Method>ex01() : void</Method>
+            <Method>main(String[]) : void</Method>
+        </Class>
+    </Package>
+</Project>
