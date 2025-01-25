@@ -1,0 +1,15 @@
+<xmi:XMI xmlns:xmi="http://www.omg.org/XMI" xmlns:uml="http://www.omg.org/spec/UML/20090901">
+    <uml:Package name="org.example">
+        <uml:Class name="Person">
+            <uml:Property name="name" type="String"/>
+            <uml:Property name="age" type="int"/>
+            <uml:Operation name="getName">
+                <uml:Return type="String"/>
+            </uml:Operation>
+        </uml:Class>
+        <uml:Association type="Composes">
+            <uml:End role="source" type="Person"/>
+            <uml:End role="target" type="Address"/>
+        </uml:Association>
+    </uml:Package>
+</xmi:XMI>

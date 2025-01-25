@@ -4,70 +4,80 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ClassEntity {
-	private String name;
-	private boolean isInterface;
-	private boolean isEnum;
-	private List<String> annotations;
-	private List<String> enumConstants;
-	private List<String> fields;
-	private List<String> methods;
+    private String name;
+    private boolean isInterface;
+    private boolean isEnum;
+    private List<String> annotations;
+    private List<String> enumConstants;
+    private List<String> fields;
+    private List<String> methods;
+    private List<UMLRelation> relations; // Ajout des relations UML
 
-	public ClassEntity(String name) {
-		this.name = name;
-		annotations = new ArrayList<>();
-		fields = new ArrayList<>();
-		methods = new ArrayList<>();
-	}
+    public ClassEntity(String name) {
+        this.name = name;
+        this.annotations = new ArrayList<>();
+        this.fields = new ArrayList<>();
+        this.methods = new ArrayList<>();
+        this.relations = new ArrayList<>(); // Initialisation des relations
+    }
 
-	public void setEnumConstants(List<String> enumConstants) {
-		this.enumConstants = enumConstants;
-	}
+    public String getName() {
+        return name;
+    }
 
-	public List<String> getEnumConstants() {
-		return enumConstants;
-	}
+    public void setInterface(boolean isInterface) {
+        this.isInterface = isInterface;
+    }
 
-	public void setInterface(boolean isInterface) {
-		this.isInterface = isInterface;
-	}
+    public boolean isInterface() {
+        return isInterface;
+    }
 
-	public List<String> getAnnotations() {
-		return annotations;
-	}
+    public void setEnum(boolean isEnum) {
+        this.isEnum = isEnum;
+    }
 
-	public void addAnnotation(String annotation) {
-		annotations.add(annotation);
-	}
+    public boolean isEnum() {
+        return isEnum;
+    }
 
-	public String getName() {
-		return name;
-	}
+    public void addAnnotation(String annotation) {
+        annotations.add(annotation);
+    }
 
-	public boolean isInterface() {
-		return isInterface;
-	}
+    public List<String> getAnnotations() {
+        return annotations;
+    }
 
-	public boolean isEnum() {
-		return isEnum;
-	}
+    public void setEnumConstants(List<String> enumConstants) {
+        this.enumConstants = enumConstants;
+    }
 
-	public void setEnum(boolean isEnum) {
-		this.isEnum = isEnum;
-	}
+    public List<String> getEnumConstants() {
+        return enumConstants;
+    }
 
-	public void addField(String field) {
-		fields.add(field);
-	}
+    public void addField(String field) {
+        fields.add(field);
+    }
 
-	public List<String> getFields() {
-		return fields;
-	}
+    public List<String> getFields() {
+        return fields;
+    }
 
-	public void addMethod(String method) {
-		methods.add(method);
-	}
+    public void addMethod(String method) {
+        methods.add(method);
+    }
 
-	public List<String> getMethods() {
-		return methods;
-	}
+    public List<String> getMethods() {
+        return methods;
+    }
+
+    public void addRelation(UMLRelation relation) {
+        relations.add(relation);
+    }
+
+    public List<UMLRelation> getRelations() {
+        return relations;
+    }
 }

@@ -1,24 +1,33 @@
 package org.mql.java.models;
 
-public class UMLRelation {
-    private String type; 
-    private ClassEntity source; 
-    private ClassEntity target;
+import org.mql.java.enumeration.RelationType;
 
-    public UMLRelation(String type, ClassEntity source, ClassEntity target) {
+public class UMLRelation {
+   
+
+    private RelationType type; // Type de la relation
+    private ClassEntity source; // Classe source
+    private ClassEntity target; // Classe cible
+
+    public UMLRelation(RelationType type, ClassEntity source, ClassEntity target) {
+        if (source == null || target == null) {
+            throw new IllegalArgumentException("Source and target classes cannot be null.");
+        }
         this.type = type;
         this.source = source;
         this.target = target;
     }
 
-    public String getType() {
+    // Retourne le type de relation
+    public RelationType getType() {
         return type;
     }
 
-    public void setType(String type) {
+    public void setType(RelationType type) {
         this.type = type;
     }
 
+    // Retourne la classe source
     public ClassEntity getSource() {
         return source;
     }
@@ -27,6 +36,7 @@ public class UMLRelation {
         this.source = source;
     }
 
+    // Retourne la classe cible
     public ClassEntity getTarget() {
         return target;
     }
@@ -35,12 +45,43 @@ public class UMLRelation {
         this.target = target;
     }
 
+    // Retourne le nom de la classe source
+    public String getFrom() {
+        return source.getName();
+    }
+
+    // Retourne le nom de la classe cible
+    public String getTo() {
+        return target.getName();
+    }
+
+    // Méthodes utilitaires pour vérifier le type de relation
+    public boolean isInheritance() {
+        return type == RelationType.INHERITANCE;
+    }
+
+    public boolean isAssociation() {
+        return type == RelationType.ASSOCIATION;
+    }
+
+    public boolean isImplementation() {
+        return type == RelationType.IMPLEMENTATION;
+    }
+
+    public boolean isAggregation() {
+        return type == RelationType.AGGREGATION;
+    }
+
+    public boolean isComposition() {
+        return type == RelationType.COMPOSITION;
+    }
+
     @Override
     public String toString() {
         return "UMLRelation{" +
-                "type='" + type + '\'' +
-                ", source=" + source +
-                ", target=" + target +
+                "type=" + type +
+                ", source=" + source.getName() +
+                ", target=" + target.getName() +
                 '}';
     }
 }

@@ -1,0 +1,22 @@
+@startuml
+!pragma useVerticalIfNeeded
+package org.mql.java.examples {
+class A {
+  + a : int
+  - b : int
+  + run() : void
+}
+class B {
+}
+class Examples {
+  - project : Project
+  + ex03() : void
+  + ex01() : void
+  + ex02() : void
+  + main(String[]) : void
+}
+}
+A <|.. Runnable
+B <|-- A
+Examples o-- Project
+@enduml
